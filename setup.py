@@ -8,7 +8,7 @@ setup(
   author = 'LemonChad',                   # Type in your name
   author_email = 'jakitmationstudios@gmail.com',      # Type in your E-Mail
   url = 'https://github.com/Lemon-Chad/sxPDK',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/Lemon-Chad/sxPDK/archive/v_1.1.zip',    # I explain this later on
+  download_url = 'https://github.com/Lemon-Chad/sxPDK/archive/v_1.2.zip',    # I explain this later on
   keywords = ['discord.py', 'shieldx', 'shieldxplugins'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'discord',
