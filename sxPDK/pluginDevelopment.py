@@ -6,6 +6,9 @@ def pluginLoaded(pl,bot):
         return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
     return commands.check(predicate)
 
+def eventPluginLoaded(pl,bot):
+  return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
+
 class achievement():
   def __init__(self,guildId,bot,aid):
     self.achievement = bot[str(guildId)]["achievements"][aid]
