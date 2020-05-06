@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-def pluginLoaded(pl):
+def pluginLoaded(pl,bot):
     async def predicate(ctx):
         return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
     return commands.check(predicate)
