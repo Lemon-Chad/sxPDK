@@ -74,7 +74,11 @@ class user():
   
   def progressAchievement(self, aid, amount=1):
     self.achievements[aid]["progress"] += amount
-  
+
+def newAchievement(guildId,bot,achievementId,action,subaction,goal,reward,rewardCount,title,description=""):
+  print(bot)
+  bot[str(guildId)]['achievements'][achievementId] = {'action':action,'subaction':subaction,'goal':goal,'description':description,'reward':reward,'title':title,'rewardcount':rewardCount}
+  bot[str(guildId)]['achievements']['ids'].append(achievementId)
 
 class team():
   def __init__(self,guildId,team,bot):
