@@ -1,6 +1,11 @@
 import discord
 from discord.ext import commands
 
+def pluginLoaded(pl):
+    async def predicate(ctx):
+        return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
+    return commands.check(predicate)
+
 class achievement():
   def __init__(self,guildId,bot,aid):
     self.achievement = bot[str(guildId)]["achievements"][aid]
@@ -10,28 +15,7 @@ class achievement():
     self.description = self.achievement["description"]
     self.reward = self.achievement["reward"]
     self.title = self.achievement["title"]
-    self.rewardCoutn = self.achievement["rewardCount"]
-
-class inventory():
-  def __init__(self,guildId,userId,bot):
-    self.inventory = bot[str(guildId)][str(userId)]["inventory"]
-    self.itemIds = self.inventory["ids"]
-    self.items = self.inventory["items"]
-  def item(self,iid):
-    return self.items[iid]
-  def addItem(self,iid,category=["none"],count=1):
-    self.itemIds.append(iid)
-    if isinstance(category,list):
-      self.items[iid] = {"count":count,"category":category}
-    else:
-      self.items[iid] = {"count":count,"category":[category]}
-  def removeItem(self,iid,count=1):
-    target = self.items[iid]
-    if target["count"] <= count:
-      self.itemIds.remove(iid)
-      del self.items[iid]
-    else:
-      target["count"] -= count
+    self.rewardCount = self.achievement["rewardCount"]
 
 def createPluginData(guildId,plugin,bot,data={}):
   bot[str(guildId)]["loadedPlugins"][plugin] = data
