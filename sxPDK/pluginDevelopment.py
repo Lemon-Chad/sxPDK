@@ -1,4 +1,4 @@
-import discord
+aimport discord
 from discord.ext import commands
 
 def pluginLoaded(pl,bot):
@@ -7,7 +7,7 @@ def pluginLoaded(pl,bot):
     return commands.check(predicate)
 
 def eventPluginLoaded(pl,bot,guild):
-  return pl in bot[str(guild.id)]["loadedPlugins"]["ids"]
+  return pl in bot[str(guild)]["loadedPlugins"]["ids"]
 
 class achievement():
   def __init__(self,guildId,bot,aid):
