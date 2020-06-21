@@ -52,8 +52,10 @@ class user():
     self.achievements = self.user["achievements"]
 
   def addData(self,name,data):
-    setattr(self, name, data)
     self.user[name] = data
+    d = self.user[name]
+    setattr(self, name, d)
+    
 
   def getItem(self,iid):
     return self.items[iid]
