@@ -92,3 +92,9 @@ class team():
   def __init__(self,guildId,team,bot):
     self.team = bot[str(guildId)]["teams"][team]
     self.points = self.team["points"]
+    self.leader = None if not self.team['captain_id'] else user(str(guildId), self.team['captain_id'], bot)
+    self.worth = 0
+    self.role = self.team["role_needed"]
+    self.members = [user(str(guildId), member, bot) for member in self.team["members"]]
+    for member in self.members: 
+        self.worth += member.bits
