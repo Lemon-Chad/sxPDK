@@ -2,9 +2,9 @@ import discord
 from discord.ext import commands
 
 def pluginLoaded(pl,bot):
-    if 'loadedPlugins' not in bot[str(ctx.guild.id)]:
-        bot[str(ctx.guild.id)]['loadedPlugins'] = {'ids': []}
     async def predicate(ctx):
+        if 'loadedPlugins' not in bot[str(ctx.guild.id)]:
+            bot[str(ctx.guild.id)]['loadedPlugins'] = {'ids': []}
         return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
     return commands.check(predicate)
 

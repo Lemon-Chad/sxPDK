@@ -2,13 +2,15 @@ import discord
 from discord.ext import commands
 
 def pluginLoaded(pl,bot):
-    if 'loadedPlugins' not in bot[str(guildId)]:
-        bot[str(guildId)]['loadedPlugins'] = {'ids': []}
+    if 'loadedPlugins' not in bot[str(ctx.guild.id)]:
+        bot[str(ctx.guild.id)]['loadedPlugins'] = {'ids': []}
     async def predicate(ctx):
         return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
     return commands.check(predicate)
 
 def eventPluginLoaded(pl,bot,guild):
+  if 'loadedPlugins' not in bot[str(guild)]:
+      bot[str(guild)]['loadedPlugins'] = {'ids': []}
   return pl in bot[str(guild)]["loadedPlugins"]["ids"]
 
 class achievement():
