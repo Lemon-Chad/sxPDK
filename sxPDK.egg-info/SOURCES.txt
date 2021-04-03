@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+sxPDK/__init__.py
+sxPDK/pluginDevelopment.py
+sxPDK.egg-info/PKG-INFO
+sxPDK.egg-info/SOURCES.txt
+sxPDK.egg-info/dependency_links.txt
+sxPDK.egg-info/requires.txt
+sxPDK.egg-info/top_level.txt

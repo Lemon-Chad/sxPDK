@@ -2,8 +2,6 @@ import discord
 from discord.ext import commands
 
 def pluginLoaded(pl,bot):
-    if 'loadedPlugins' not in bot[str(guildId)]:
-        bot[str(guildId)]['loadedPlugins'] = {'ids': []}
     async def predicate(ctx):
         return pl in bot[str(ctx.guild.id)]["loadedPlugins"]["ids"]
     return commands.check(predicate)
@@ -23,13 +21,9 @@ class achievement():
     self.rewardCount = self.achievement["rewardCount"]
 
 def createPluginData(guildId,plugin,bot,data={}):
-  if 'loadedPlugins' not in bot[str(guildId)]:
-      bot[str(guildId)]['loadedPlugins'] = {'ids': []}
   bot[str(guildId)]["loadedPlugins"][plugin] = data
 
 def getPlugin(guildId,plugin,bot):
-  if 'loadedPlugins' not in bot[str(guildId)]:
-      bot[str(guildId)]['loadedPlugins'] = {'ids': []}
   return bot[str(guildId)]["loadedPlugins"][plugin]
 
 def getAchievements(guildId,bot):
