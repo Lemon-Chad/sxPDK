@@ -1,12 +1,12 @@
 Metadata-Version: 1.1
 Name: sxPDK
-Version: 1.5
+Version: 1.5.2
 Summary: The Plugin Development Kit for ShieldX Manager.
 Home-page: https://github.com/Lemon-Chad/sxPDK
 Author: LemonChad
 Author-email: jakitmationstudios@gmail.com
 License: MIT
-Download-URL: https://github.com/Lemon-Chad/sxPDK/archive/v_1.5.zip
+Download-URL: https://github.com/Lemon-Chad/sxPDK/archive/v_1.5.2.zip
 Description: UNKNOWN
 Keywords: discord.py,shieldx,shieldxplugins
 Platform: UNKNOWN
